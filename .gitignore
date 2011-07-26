@@ -1,0 +1,4 @@
+output/classes
+.git
+.svn
+*.class
