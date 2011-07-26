@@ -1,10 +1,10 @@
 grammar GalaxyToolConfig;
 options {output=AST;}
 
-command	:	text? IF text? ELSE text? ENDIF text?
+command	:	text? IF^ text? (ELSE^ text? (ENDIF^ text?))
 	;
 	
-text	:	CHAR+
+text 	:	WORD+
 	;	
 	
 IF	:	'#if'
@@ -20,7 +20,7 @@ ENDIF 	:	'#end if'
 // 	;
 
 
-CHAR	:	~(' '|'\t'|'\r'|'\n')
+WORD	:	(~(' '|'\t'|'\r'|'\n'))+
 	;
 
 WS  :   ( ' '
