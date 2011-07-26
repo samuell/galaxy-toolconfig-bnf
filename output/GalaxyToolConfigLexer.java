@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g 2011-07-26 17:13:20
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g 2011-07-26 18:09:07
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -24,15 +24,15 @@ public class GalaxyToolConfigLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "/home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g"; }
+    public String getGrammarFileName() { return "/home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g"; }
 
     // $ANTLR start "IF"
     public final void mIF() throws RecognitionException {
         try {
             int _type = IF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:10:4: ( '#if' )
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:10:6: '#if'
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:19:4: ( '#if' )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:19:6: '#if'
             {
             match("#if"); 
 
@@ -52,8 +52,8 @@ public class GalaxyToolConfigLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:13:6: ( '#else' )
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:13:8: '#else'
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:22:6: ( '#else' )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:22:8: '#else'
             {
             match("#else"); 
 
@@ -73,8 +73,8 @@ public class GalaxyToolConfigLexer extends Lexer {
         try {
             int _type = ENDIF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:16:8: ( '#end if' )
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:16:10: '#end if'
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:25:8: ( '#end if' )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:25:10: '#end if'
             {
             match("#end if"); 
 
@@ -94,10 +94,10 @@ public class GalaxyToolConfigLexer extends Lexer {
         try {
             int _type = WORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:23:6: ( (~ ( ' ' | '\\t' | '\\r' | '\\n' ) )+ )
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:23:8: (~ ( ' ' | '\\t' | '\\r' | '\\n' ) )+
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:32:6: ( (~ ( ' ' | '\\t' | '\\r' | '\\n' ) )+ )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:32:8: (~ ( ' ' | '\\t' | '\\r' | '\\n' ) )+
             {
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:23:8: (~ ( ' ' | '\\t' | '\\r' | '\\n' ) )+
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:32:8: (~ ( ' ' | '\\t' | '\\r' | '\\n' ) )+
             int cnt1=0;
             loop1:
             do {
@@ -111,7 +111,7 @@ public class GalaxyToolConfigLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:23:9: ~ ( ' ' | '\\t' | '\\r' | '\\n' )
+            	    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:32:9: ~ ( ' ' | '\\t' | '\\r' | '\\n' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\b')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -151,8 +151,8 @@ public class GalaxyToolConfigLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:26:5: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-            // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:26:9: ( ' ' | '\\t' | '\\r' | '\\n' )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:35:5: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:35:9: ( ' ' | '\\t' | '\\r' | '\\n' )
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
                 input.consume();
@@ -176,40 +176,40 @@ public class GalaxyToolConfigLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:1:8: ( IF | ELSE | ENDIF | WORD | WS )
+        // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:1:8: ( IF | ELSE | ENDIF | WORD | WS )
         int alt2=5;
         alt2 = dfa2.predict(input);
         switch (alt2) {
             case 1 :
-                // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:1:10: IF
+                // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:1:10: IF
                 {
                 mIF(); 
 
                 }
                 break;
             case 2 :
-                // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:1:13: ELSE
+                // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:1:13: ELSE
                 {
                 mELSE(); 
 
                 }
                 break;
             case 3 :
-                // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:1:18: ENDIF
+                // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:1:18: ENDIF
                 {
                 mENDIF(); 
 
                 }
                 break;
             case 4 :
-                // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:1:24: WORD
+                // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:1:24: WORD
                 {
                 mWORD(); 
 
                 }
                 break;
             case 5 :
-                // /home/samuel/projects/galaxy-toolconfig-parser/GalaxyToolConfig.g:1:29: WS
+                // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:1:29: WS
                 {
                 mWS(); 
 

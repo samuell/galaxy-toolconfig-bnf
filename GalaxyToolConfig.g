@@ -3,7 +3,16 @@ options {output=AST;}
 
 command	:	text? IF^ text? (ELSE^ text? (ENDIF^ text?))
 	;
+
+
+elsepart 
+	:	ELSE^ text?
+	;
 	
+endifpart
+	:	ENDIF^ text?
+	;
+
 text 	:	WORD+
 	;	
 	
