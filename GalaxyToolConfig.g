@@ -1,5 +1,5 @@
 grammar GalaxyToolConfig;
-
+options {output=AST;}
 
 command	:	text? IF text? ELSE text? ENDIF text?
 	;
