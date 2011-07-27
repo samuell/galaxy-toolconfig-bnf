@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g 2011-07-27 17:53:49
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g 2011-07-27 18:06:09
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -31,7 +31,7 @@ public class GalaxyToolConfigParser extends DebugParser {
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "ifstatement", "binary", "text", "param", "command"
+        "invalidRule", "ifstatement", "param", "binary", "text", "command"
     };
     public static final boolean[] decisionCanBacktrack = new boolean[] {
         false, // invalid decision
@@ -430,7 +430,7 @@ public class GalaxyToolConfigParser extends DebugParser {
     };
 
     // $ANTLR start "ifstatement"
-    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:10:1: ifstatement : IF ( STRING | VARIABLE ) EQTEST ( STRING | VARIABLE ) ( COLON ) ;
+    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:10:1: ifstatement : IF ( STRING | VARIABLE ) EQTEST ( STRING | VARIABLE ) COLON ;
     public final GalaxyToolConfigParser.ifstatement_return ifstatement() throws RecognitionException {
         GalaxyToolConfigParser.ifstatement_return retval = new GalaxyToolConfigParser.ifstatement_return();
         retval.start = input.LT(1);
@@ -455,10 +455,10 @@ public class GalaxyToolConfigParser extends DebugParser {
         dbg.location(10, 1);
 
         try {
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:11:2: ( IF ( STRING | VARIABLE ) EQTEST ( STRING | VARIABLE ) ( COLON ) )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:11:2: ( IF ( STRING | VARIABLE ) EQTEST ( STRING | VARIABLE ) COLON )
             dbg.enterAlt(1);
 
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:11:4: IF ( STRING | VARIABLE ) EQTEST ( STRING | VARIABLE ) ( COLON )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:11:4: IF ( STRING | VARIABLE ) EQTEST ( STRING | VARIABLE ) COLON
             {
             root_0 = (Object)adaptor.nil();
 
@@ -480,12 +480,12 @@ public class GalaxyToolConfigParser extends DebugParser {
                 throw mse;
             }
 
-            dbg.location(11,29);
-            EQTEST11=(Token)match(input,EQTEST,FOLLOW_EQTEST_in_ifstatement75); 
+            dbg.location(11,25);
+            EQTEST11=(Token)match(input,EQTEST,FOLLOW_EQTEST_in_ifstatement71); 
             EQTEST11_tree = (Object)adaptor.create(EQTEST11);
             adaptor.addChild(root_0, EQTEST11_tree);
 
-            dbg.location(11,36);
+            dbg.location(11,32);
             set12=(Token)input.LT(1);
             if ( (input.LA(1)>=STRING && input.LA(1)<=VARIABLE) ) {
                 input.consume();
@@ -498,19 +498,10 @@ public class GalaxyToolConfigParser extends DebugParser {
                 throw mse;
             }
 
-            dbg.location(11,57);
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:11:57: ( COLON )
-            dbg.enterAlt(1);
-
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:11:58: COLON
-            {
-            dbg.location(11,58);
-            COLON13=(Token)match(input,COLON,FOLLOW_COLON_in_ifstatement87); 
+            dbg.location(11,50);
+            COLON13=(Token)match(input,COLON,FOLLOW_COLON_in_ifstatement79); 
             COLON13_tree = (Object)adaptor.create(COLON13);
             adaptor.addChild(root_0, COLON13_tree);
-
-
-            }
 
 
             }
@@ -548,7 +539,7 @@ public class GalaxyToolConfigParser extends DebugParser {
     };
 
     // $ANTLR start "param"
-    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:1: param : ( DBLDASH ) ( WORD )* ( EQ ) ( VARIABLE | STRING ) ;
+    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:1: param : DBLDASH ( WORD )* EQ ( VARIABLE | STRING ) ;
     public final GalaxyToolConfigParser.param_return param() throws RecognitionException {
         GalaxyToolConfigParser.param_return retval = new GalaxyToolConfigParser.param_return();
         retval.start = input.LT(1);
@@ -571,29 +562,20 @@ public class GalaxyToolConfigParser extends DebugParser {
         dbg.location(14, 1);
 
         try {
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:8: ( ( DBLDASH ) ( WORD )* ( EQ ) ( VARIABLE | STRING ) )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:8: ( DBLDASH ( WORD )* EQ ( VARIABLE | STRING ) )
             dbg.enterAlt(1);
 
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:10: ( DBLDASH ) ( WORD )* ( EQ ) ( VARIABLE | STRING )
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:10: DBLDASH ( WORD )* EQ ( VARIABLE | STRING )
             {
             root_0 = (Object)adaptor.nil();
 
             dbg.location(14,10);
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:10: ( DBLDASH )
-            dbg.enterAlt(1);
-
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:11: DBLDASH
-            {
-            dbg.location(14,11);
-            DBLDASH14=(Token)match(input,DBLDASH,FOLLOW_DBLDASH_in_param100); 
+            DBLDASH14=(Token)match(input,DBLDASH,FOLLOW_DBLDASH_in_param90); 
             DBLDASH14_tree = (Object)adaptor.create(DBLDASH14);
             adaptor.addChild(root_0, DBLDASH14_tree);
 
-
-            }
-
-            dbg.location(14,19);
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:19: ( WORD )*
+            dbg.location(14,18);
+            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:18: ( WORD )*
             try { dbg.enterSubRule(5);
 
             loop5:
@@ -614,10 +596,10 @@ public class GalaxyToolConfigParser extends DebugParser {
             	case 1 :
             	    dbg.enterAlt(1);
 
-            	    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:20: WORD
+            	    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:18: WORD
             	    {
-            	    dbg.location(14,20);
-            	    WORD15=(Token)match(input,WORD,FOLLOW_WORD_in_param103); 
+            	    dbg.location(14,18);
+            	    WORD15=(Token)match(input,WORD,FOLLOW_WORD_in_param92); 
             	    WORD15_tree = (Object)adaptor.create(WORD15);
             	    adaptor.addChild(root_0, WORD15_tree);
 
@@ -631,21 +613,12 @@ public class GalaxyToolConfigParser extends DebugParser {
             } while (true);
             } finally {dbg.exitSubRule(5);}
 
-            dbg.location(14,26);
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:26: ( EQ )
-            dbg.enterAlt(1);
-
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:14:27: EQ
-            {
-            dbg.location(14,27);
-            EQ16=(Token)match(input,EQ,FOLLOW_EQ_in_param107); 
+            dbg.location(14,24);
+            EQ16=(Token)match(input,EQ,FOLLOW_EQ_in_param95); 
             EQ16_tree = (Object)adaptor.create(EQ16);
             adaptor.addChild(root_0, EQ16_tree);
 
-
-            }
-
-            dbg.location(14,30);
+            dbg.location(14,27);
             set17=(Token)input.LT(1);
             if ( (input.LA(1)>=STRING && input.LA(1)<=VARIABLE) ) {
                 input.consume();
@@ -744,7 +717,7 @@ public class GalaxyToolConfigParser extends DebugParser {
             	    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:17:9: WORD
             	    {
             	    dbg.location(17,9);
-            	    WORD18=(Token)match(input,WORD,FOLLOW_WORD_in_text125); 
+            	    WORD18=(Token)match(input,WORD,FOLLOW_WORD_in_text113); 
             	    WORD18_tree = (Object)adaptor.create(WORD18);
             	    adaptor.addChild(root_0, WORD18_tree);
 
@@ -809,13 +782,13 @@ public class GalaxyToolConfigParser extends DebugParser {
     public static final BitSet FOLLOW_WORD_in_binary51 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IF_in_ifstatement63 = new BitSet(new long[]{0x0000000000000300L});
     public static final BitSet FOLLOW_set_in_ifstatement65 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_EQTEST_in_ifstatement75 = new BitSet(new long[]{0x0000000000000300L});
-    public static final BitSet FOLLOW_set_in_ifstatement77 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_COLON_in_ifstatement87 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DBLDASH_in_param100 = new BitSet(new long[]{0x0000000000002040L});
-    public static final BitSet FOLLOW_WORD_in_param103 = new BitSet(new long[]{0x0000000000002040L});
-    public static final BitSet FOLLOW_EQ_in_param107 = new BitSet(new long[]{0x0000000000000300L});
-    public static final BitSet FOLLOW_set_in_param109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WORD_in_text125 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_EQTEST_in_ifstatement71 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_set_in_ifstatement73 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_COLON_in_ifstatement79 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DBLDASH_in_param90 = new BitSet(new long[]{0x0000000000002040L});
+    public static final BitSet FOLLOW_WORD_in_param92 = new BitSet(new long[]{0x0000000000002040L});
+    public static final BitSet FOLLOW_EQ_in_param95 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_set_in_param97 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WORD_in_text113 = new BitSet(new long[]{0x0000000000000042L});
 
 }
