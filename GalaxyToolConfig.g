@@ -1,37 +1,55 @@
 grammar GalaxyToolConfig;
 options {output=AST;}
 
-command	:	text? IF^ text? (ELSE^ text? (ENDIF^ text?))
-	;
-
-
-elsepart 
-	:	ELSE^ text?
+command	:	binary (ifstatement param+ (ELSE param+)? ENDIF | param)*
 	;
 	
-endifpart
-	:	ENDIF^ text?
+binary 	:	WORD
 	;
 
+ifstatement 
+	:	IF ( STRING | VARIABLE ) EQTEST ( STRING | VARIABLE )(COLON)
+	;
+
+param 	:	(DBLDASH)(WORD)*(EQ)(VARIABLE|STRING)
+	;
+	
 text 	:	WORD+
 	;	
 	
 IF	:	'#if'
 	;
-	
+
 ELSE	:	'#else'
 	;
 	
 ENDIF 	:	'#end if'
 	;
-
-// CHAR	:	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'.'|'$'|'{'|'}'|'='|'"'|'-'|':'|';')
-// 	;
-
-
-WORD	:	(~(' '|'\t'|'\r'|'\n'))+
+	
+EQTEST 	:	'=='
 	;
-
+	
+	
+DBLDASH	:	'--'
+	;
+	
+EQ	:	'='
+	;
+	
+COLON 	:	':'
+	;
+	
+	
+STRING	:	'"'('a'..'z'|'A'..'Z')+'"'
+	;
+	
+VARIABLE 
+	:	'$'('{')?WORD('}')?
+	;
+	
+WORD	:	('a'..'z'|'A'..'Z')('a'..'z'|'A'..'Z'|'.'|'_'|'0'..'9')*
+	;
+	
 WS  :   ( ' '
         | '\t'
         | '\r'
