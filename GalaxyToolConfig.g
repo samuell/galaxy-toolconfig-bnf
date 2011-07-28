@@ -14,9 +14,16 @@ ifstatement
 param 	:	DBLDASH WORD* EQ (VARIABLE|STRING)
 	;
 	
-text 	:	WORD+
-	;	
-	
+WORD	:	('a'..'z'|'A'..'Z')('a'..'z'|'A'..'Z'|'.'|'_'|'0'..'9')*
+	;
+
+VARIABLE 
+	:	'$'('{')?WORD('}')?
+	;
+
+STRING	:	'"'('a'..'z'|'A'..'Z')+'"'
+	;
+
 IF	:	'#if'
 	;
 
@@ -26,28 +33,16 @@ ELSE	:	'#else'
 ENDIF 	:	'#end if'
 	;
 	
+EQ	:	'='
+	;
+
 EQTEST 	:	'=='
 	;
-	
 	
 DBLDASH	:	'--'
 	;
 	
-EQ	:	'='
-	;
-	
 COLON 	:	':'
-	;
-	
-	
-STRING	:	'"'('a'..'z'|'A'..'Z')+'"'
-	;
-	
-VARIABLE 
-	:	'$'('{')?WORD('}')?
-	;
-	
-WORD	:	('a'..'z'|'A'..'Z')('a'..'z'|'A'..'Z'|'.'|'_'|'0'..'9')*
 	;
 	
 WS  :   ( ' '

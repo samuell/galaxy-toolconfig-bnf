@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g 2011-07-27 18:06:09
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g 2011-07-28 10:16:05
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -31,11 +31,11 @@ public class GalaxyToolConfigParser extends DebugParser {
     // delegators
 
     public static final String[] ruleNames = new String[] {
-        "invalidRule", "ifstatement", "param", "binary", "text", "command"
+        "invalidRule", "binary", "ifstatement", "command", "param"
     };
     public static final boolean[] decisionCanBacktrack = new boolean[] {
         false, // invalid decision
-        false, false, false, false, false, false
+        false, false, false, false, false
     };
 
      
@@ -661,112 +661,6 @@ public class GalaxyToolConfigParser extends DebugParser {
     }
     // $ANTLR end "param"
 
-    public static class text_return extends ParserRuleReturnScope {
-        Object tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start "text"
-    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:17:1: text : ( WORD )+ ;
-    public final GalaxyToolConfigParser.text_return text() throws RecognitionException {
-        GalaxyToolConfigParser.text_return retval = new GalaxyToolConfigParser.text_return();
-        retval.start = input.LT(1);
-
-        Object root_0 = null;
-
-        Token WORD18=null;
-
-        Object WORD18_tree=null;
-
-        try { dbg.enterRule(getGrammarFileName(), "text");
-        if ( getRuleLevel()==0 ) {dbg.commence();}
-        incRuleLevel();
-        dbg.location(17, 1);
-
-        try {
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:17:7: ( ( WORD )+ )
-            dbg.enterAlt(1);
-
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:17:9: ( WORD )+
-            {
-            root_0 = (Object)adaptor.nil();
-
-            dbg.location(17,9);
-            // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:17:9: ( WORD )+
-            int cnt6=0;
-            try { dbg.enterSubRule(6);
-
-            loop6:
-            do {
-                int alt6=2;
-                try { dbg.enterDecision(6, decisionCanBacktrack[6]);
-
-                int LA6_0 = input.LA(1);
-
-                if ( (LA6_0==WORD) ) {
-                    alt6=1;
-                }
-
-
-                } finally {dbg.exitDecision(6);}
-
-                switch (alt6) {
-            	case 1 :
-            	    dbg.enterAlt(1);
-
-            	    // /home/samuel/projects/galaxy-toolconfig-bnf/GalaxyToolConfig.g:17:9: WORD
-            	    {
-            	    dbg.location(17,9);
-            	    WORD18=(Token)match(input,WORD,FOLLOW_WORD_in_text113); 
-            	    WORD18_tree = (Object)adaptor.create(WORD18);
-            	    adaptor.addChild(root_0, WORD18_tree);
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt6 >= 1 ) break loop6;
-                        EarlyExitException eee =
-                            new EarlyExitException(6, input);
-                        dbg.recognitionException(eee);
-
-                        throw eee;
-                }
-                cnt6++;
-            } while (true);
-            } finally {dbg.exitSubRule(6);}
-
-
-            }
-
-            retval.stop = input.LT(-1);
-
-            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
-            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
-
-        }
-        finally {
-        }
-        dbg.location(18, 2);
-
-        }
-        finally {
-            dbg.exitRule(getGrammarFileName(), "text");
-            decRuleLevel();
-            if ( getRuleLevel()==0 ) {dbg.terminate();}
-        }
-
-        return retval;
-    }
-    // $ANTLR end "text"
-
     // Delegated rules
 
 
@@ -789,6 +683,5 @@ public class GalaxyToolConfigParser extends DebugParser {
     public static final BitSet FOLLOW_WORD_in_param92 = new BitSet(new long[]{0x0000000000002040L});
     public static final BitSet FOLLOW_EQ_in_param95 = new BitSet(new long[]{0x0000000000000300L});
     public static final BitSet FOLLOW_set_in_param97 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WORD_in_text113 = new BitSet(new long[]{0x0000000000000042L});
 
 }
